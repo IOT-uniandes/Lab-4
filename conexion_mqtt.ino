@@ -3,7 +3,7 @@
 // Actualizar ssid, password y mqtt_servere (ip del servidor MQTT) con los datos actuales de conexión del laboratorio.
 const char* ssid = "Lab_ML340";
 const char* password = "UiSnfCra1";
-const char* mqtt_server = "157.253.195.202";
+const char* mqtt_server = "157.253.205.111";
 WiFiClient espClient;
 PubSubClient client(espClient);
 unsigned long lastMsg = 0;

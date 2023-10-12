@@ -48,7 +48,7 @@ void reconnect() {
     if (client.connect(clientId.c_str())) {
       Serial.println("connected");
       // Este es el mensaje que debe enviar cuando conecte
-      client.publish("outTopic", "Somos el Grupo #");
+      client.publish("outTopic", "Somos el Grupo # 9");
       // Vuelve a suscribir
       client.subscribe("inTopic");
     } else {

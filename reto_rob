@@ -1,0 +1,64 @@
+#include <PubSubClient.h>
+
+#include <LiquidCrystal.h>
+#include "ESP8266WiFi.h"
+#include "UbidotsESPMQTT.h"
+#define TOKEN "BBFF-PFcLDnuU508pywqCihZePnW88HAZKD"
+#define WIFINAME "Lab_ML340"
+#define WIFIPASS "UiSnfCra1"
+int myPins[] = {2, 3, 4, 5, 6, 7, 8, 9};
+LiquidCrystal lcd(2, 3, 4, 5, 6, 7);
+bool location[] = {false, false, false, false, false, false, false, false};
+int vacios=8;
+int led =13;
+Ubidots client(TOKEN);
+void callback(char* topic, byte* payload, unsigned int length) {
+  Serial.print("Message arrived [");
+  Serial.print(topic);
+  Serial.print("] ");
+  for (int i=0;i<length;i++) {
+    Serial.print((char)payload[i]);
+  }
+  Serial.println();
+}
+void setup()
+{
+
+  Serial.begin(115200);
+  client.setDebug(true);
+  client.wifiConnection(WIFINAME, WIFIPASS);
+  client.begin(callback);
+  for(int i=0; i<(sizeof(myPins)/sizeof(int)); i++){
+    pinMode (myPins[i], INPUT); // pin INPUT sensor infrarrojo
+  }
+ 
+}
+
+void loop()
+{
+    for(int i=0; i<(sizeof(myPins)/sizeof(int)); i++)
+    {
+   
+  int estado= digitalRead (myPins[i]);
+  if(estado==1){
+     Serial.println("///////////////////");
+     for (bool element : location) // for each element in the array
+         Serial.println(element); // print the current element
+    location[i]=true;
+    vacios--;
+    delay(50000);
+  }
+  else
+  {
+       Serial.println("///////////////////");
+    for (bool element : location) // for each element in the array
+        Serial.println(element); // print the current element
+    location[i]=false;
+    vacios++;
+    delay(50000);
+  }
+  lcd.clear();
+  lcd.write(vacios);
+  }
+  
+}

@@ -1,8 +1,8 @@
 #include "ESP8266WiFi.h"
 
 const char* ssid = "Lab_ML340";
-const char* password = "UiSnfCra1"
-const char* mqtt_server = "157.253.205.17"
+const char* password = "UiSnfCra1";
+const char* mqtt_server = "157.253.205.17";
 
 void setup_wifi(){
   delay(10);

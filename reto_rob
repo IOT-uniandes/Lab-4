@@ -3,7 +3,7 @@
 #include <LiquidCrystal.h>
 #include "ESP8266WiFi.h"
 #include "UbidotsESPMQTT.h"
-#define TOKEN "BBFF-PFcLDnuU508pywqCihZePnW88HAZKD"
+#define TOKEN "BBFF-fd78a2a5f865f0c23ff51f142c418c949ea"
 #define WIFINAME "Lab_ML340"
 #define WIFIPASS "UiSnfCra1"
 int myPins[] = {2, 3, 4, 5, 6, 7, 8, 9};

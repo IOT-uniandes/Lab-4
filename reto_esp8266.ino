@@ -1,18 +1,3 @@
-/*#include "UbidotsESPMQTT.h"
-#define TOKEN "BBFF-fd78a2a5f865f0c23ff51f142c418c949ea"
-#define WIFINAME "Lab_ML340"
-#define WIFIPASS "UiSnfCra1"
-//#define ID1 "park1"
-Ubidots client(TOKEN);
-
-void setup(){
-  Serial.begin(115200);
-  client.setDebug(true);
-  client.wifiConnection(WIFINAME, WIFIPASS);
-  //client.begin(callback);
-  //pinMode(2, INPUT);
-}*/
-
 /****************************************
  * Include Libraries
  ****************************************/
@@ -27,8 +12,8 @@ void setup(){
  * Define Constants
  ****************************************/
 
-#define WIFISSID "Tony" // Put your WifiSSID here
-#define PASSWORD "abcdefgh" // Put your wifi password here
+#define WIFISSID "Lab_ML340" // Put your WifiSSID here
+#define PASSWORD "UiSnfCra1" // Put your wifi password here
 #define TOKEN "BBFF-5HXoey9AJWqvpGGY3v6F6rNSmchX0a"
 #define DEVICE_LABEL "Lab4" // Assig the device label
 #define MQTT_CLIENT_NAME "1" // MQTT client Name

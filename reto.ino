@@ -29,7 +29,7 @@ void setup(){
 
 #define WIFISSID "Florian" // Put your WifiSSID here
 #define PASSWORD "A1f2f3q4" // Put your wifi password here
-#define TOKEN "BBFF-fd78a2a5f865f0c23ff51f142c418c949ea"
+#define TOKEN "BBFF-5HXoey9AJWqvpGGY3v6F6rNSmchX0a"
 #define VARIABLE_LABEL "prueba" // Assing the variable label
 #define DEVICE_LABEL "Lab4" // Assig the device label
 #define MQTT_CLIENT_NAME "1" // MQTT client Name

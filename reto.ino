@@ -1,18 +1,3 @@
-/*#include "UbidotsESPMQTT.h"
-#define TOKEN "BBFF-fd78a2a5f865f0c23ff51f142c418c949ea"
-#define WIFINAME "Lab_ML340"
-#define WIFIPASS "UiSnfCra1"
-//#define ID1 "park1"
-Ubidots client(TOKEN);
-
-void setup(){
-  Serial.begin(115200);
-  client.setDebug(true);
-  client.wifiConnection(WIFINAME, WIFIPASS);
-  //client.begin(callback);
-  //pinMode(2, INPUT);
-}*/
-
 /****************************************
  * Include Libraries
  ****************************************/
@@ -69,7 +54,6 @@ void callback(char* topic, byte* payload, unsigned int length) {
 
 void reconnect() {
   // Loop until we're reconnected
-  Serial.println("Hola");
   while (!client.connected()) {
     Serial.println("Attempting MQTT connection...");
     
@@ -113,7 +97,6 @@ void setup() {
 }
 
 void loop() {
-    Serial.println("Hola");
     if (!client.connected()) {
       reconnect();
 
